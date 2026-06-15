@@ -4,7 +4,7 @@
   "description": "Contact Book CRUD application with HTML, CSS (Tailwind), JS, Express API and SQLite database",
   "main": "server.js",
   "scripts": {
-    "start": "node script.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.19.2",
