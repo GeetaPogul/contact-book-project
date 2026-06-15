@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Book</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800">
+
+  <div class="max-w-3xl mx-auto px-4 py-8">
+
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-indigo-600">📒 Contact Book</h1>
+      <p class="text-slate-500 mt-1">Create, view, update and delete your contacts</p>
+    </header>
+
+    <!-- Form Card: Add / Edit Contact -->
+    <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+      <h2 id="formTitle" class="text-xl font-semibold mb-4">Add New Contact</h2>
+
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Hidden field to store contact id when editing -->
+        <input type="hidden" id="contactId" />
+
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-600 mb-1">Name *</label>
+          <input type="text" id="name" required
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-slate-600 mb-1">Phone *</label>
+          <input type="text" id="phone" required
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-600 mb-1">Email</label>
+          <input type="email" id="email"
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label for="address" class="block text-sm font-medium text-slate-600 mb-1">Address</label>
+          <input type="text" id="address"
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div class="md:col-span-2 flex gap-3 mt-2">
+          <button type="submit" id="submitBtn"
+            class="bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+            Add Contact
+          </button>
+          <button type="button" id="cancelEditBtn"
+            class="hidden bg-slate-200 text-slate-700 px-5 py-2 rounded-lg font-medium hover:bg-slate-300 transition">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Contacts List -->
+    <section class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-4">Your Contacts</h2>
+
+      <div id="message" class="hidden mb-4 text-sm font-medium"></div>
+
+      <div id="contactsList" class="space-y-3">
+        <!-- Contact cards are injected here by script.js -->
+      </div>
+
+      <p id="emptyState" class="hidden text-center text-slate-400 py-6">
+        No contacts yet. Add your first contact above.
+      </p>
+    </section>
+
+    <footer class="text-center text-xs text-slate-400 mt-8">
+      Contact Book &mdash; CRUD Mini Project (HTML, Tailwind CSS, JS, Express API, SQLite)
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

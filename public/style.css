@@ -1,0 +1,12 @@
+/* style.css
+   Tailwind handles most of the styling. This file holds a few
+   small extra touches that are easier to express in plain CSS. */
+
+.contact-card {
+  transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
